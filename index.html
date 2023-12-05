@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="views/img/logo.png">
+    <link rel="stylesheet" href="views/css/styles.css">
+    <link rel="stylesheet" href="views/css/sobreNosotros.css">
+    <link rel="stylesheet" href="views/css/cargador.css">
+    <link rel="stylesheet" href="views/css/planes.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Noto+Serif:ital,wght@1,700&family=Nova+Square&family=PT+Sans:ital,wght@0,400;1,700&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="views/css/login.css">
+    <link rel="stylesheet" href="./views/css/testimonios.css">
+    <link rel="stylesheet" href="views/css/swiper.css">
+    <link rel="stylesheet" href="views/css/planes-ejercicios.css">
+    <link rel="stylesheet" href="./views/css/ejercicios.css">
+    <link rel="stylesheet" href="views/css/modalDatos.css">
+    <link rel="stylesheet" href="views/css/responsive.css">
+    <link rel="stylesheet" href="/views/css/tiposPlan.css">
+    
+    <title>Glow-fit</title>
+</head>
+
+<body>
+    
+    
+    <div class="login-container" id="login-container">
+        <div class="container-registro" id="container-registro">
+            <div class="form-value">
+                <form action="">
+                    <section class="container-h2">
+                        <h2>Registro</h2>
+                        <span onclick="quitarRegistro()"><img src="views/img/cerrar.png" alt="logo-cerrar"></span>
+                    </section>
+                    <section class="container-input">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <input type="text" id="nombre-usuario" required>
+                        <label for="">Nombre</label>
+                    </section>
+                    <section class="container-input">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" id="email-registro" required>
+                        <label for="">Email</label>
+                    </section>
+                    <section class="container-input">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="pass-registro" required>
+                        <label for="">Password</label>
+                    </section>
+                    <button class="button" type="button" id="button-registro">Registrar cuenta</button>
+                    <div class="login">
+                        <p>Ya tengo cuenta <a href="#" id="login">Iniciar sesión</a></p>
+                    </div>
+                </form> 
+            </div>
+        </div>
+        <div class="container-login" id="container-login">
+            <div class="form-value">
+                <form action="">
+                    <section class="container-h2">
+                        <h2>Iniciar sesión</h2>
+                        <span onclick="quitarRegistro()"><img src="views/img/cerrar.png" alt="icono-cerrar"></span>
+                    </section>
+                    <section class="container-input">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" id="email-login" >
+                        <label for="">Email</label>
+                    </section>
+                    <section class="container-input">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="pass-login" >
+                        <label for="">Password</label>
+                    </section>
+                    <section class="forget">
+                        <label for=""><input type="checkbox">Recordar <a href="#">Olvide la contraseña</a></label>
+                    </section>
+                    <button class="button" type="button" id="button-login">Iniciar sesión</button>
+                    <div class="registrar">
+                        <p>No tengo cuenta <a href="#" id="registro">Registrarme</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <main>
+        <nav class="nav">
+            <article class="contenedor-logo">
+                <img id="logo" class="logo" src="views/img/logo.png" alt="logotipo">
+            </article>
+            <article class="contenedor-enlaces">
+                <a href="#contenedor-planes" class="enlace" id="entrenamientos">Entrenamiento </a>
+                <a href="https://cuidateplus.marca.com/alimentacion/dietas/2017/02/08/ocho-pautas-clave-dieta-sana-equilibrada-141140.html" class="enlace" target="_blank">Nutricion</a>
+                <a href="#testimonios" class="enlace">Comunidad</a>
+                <a href="https://sportfitness.co/collections/accesorios" class="enlace" target="_blank">Accesorios</a>
+            </article>
+            <article class="contenedor-botones-nav" id="contenedor-botones-nav" style="display: flex;">
+                <button onclick="mostrarRegistro()">Iniciar sesion</button>
+                <button onclick="mostrarRegistro()">Empieza ya</button>
+            </article>
+            <article class="contenedor-botones-cerrar" style="display: none;" id="cerrar">
+                <button onclick="salir()">Cerrar sesion</button>
+                <button onclick="mostrarDatosUsuario()" class="usuario-perfil" id="usuario-perfil">Perfil</button>
+            </article>
+        </nav>
+
+        <!-- los tres requerimientos que el cliente quiere para tener su plan alimenticio -->
+        <div class="title-cardsTiposPlan" id="tiuloTiposPlan">
+          <h2>Servicios que Ofrecemos</h2>
+        </div>
+      <div class="container-cardTiposPlan" id="contenedorTiposPlan">
+        
+      <div class="cardTiposPlan">
+        <figure>
+          <img src="views/img/imagenesPlanes/perderpeso.jpg">
+        </figure>
+        <div class="contenido-cardTiposPlan">
+          <h3>Plan para Perder peso</h3>
+          <p>Este plan está diseñado para ayudarte a perder peso de forma saludable y efectiva. Consiste en una combinación de ejercicios aeróbicos, como correr, saltar o nadar, y una dieta equilibrada, baja en calorías y rica en proteínas, fibra y agua. </p>
+          <a  id="botonActivarPerderPeso" type="button">Adquirir</a>
+        </div>
+      </div>
+      <div class="cardTiposPlan">
+        <figure>
+          <img src="views/img/imagenesPlanes/tonificar.jpg">
+        </figure>
+        <div class="contenido-cardTiposPlan">
+          <h3>Plan para tonificar</h3>
+          <p>Este plan está pensado para ayudarte a definir y fortalecer tus músculos, sin aumentar demasiado tu volumen. Consiste en una combinación de ejercicios de resistencia, como pesas, bandas elásticas o máquinas, y una dieta moderada en calorías y alta en proteínas, carbohidratos complejos y grasas saludables.</p>
+          <a id="botonActivarTonificar" type="button">Adquirir</a>
+        </div>
+      </div>
+      <div class="cardTiposPlan">
+        <figure>
+          <img src="views/img/imagenesPlanes/masaMuscular.jpg">
+        </figure>
+        <div class="contenido-cardTiposPlan">
+          <h3>Plan para Aumentar masa</h3>
+          <p> Este plan está orientado a ayudarte a ganar peso de forma saludable y progresiva. Consiste en una combinación de ejercicios de fuerza, como levantamiento de potencia, culturismo o calistenia, y una dieta alta en calorías y proteínas, con un balance adecuado de carbohidratos y grasas. </p>
+          <a id="botonActivarAumentarPeso" type="button">Adquirir</a>
+        </div>
+      </div>
+      </div>
+
+        <!-- Contenedor de los planes de los botones para cada plan que ofrecemos -->
+        <div class="contenedor-planes-ejercicio" id="contenedor-planes-ejercicio">
+            <div class="contenedor-planes-nav" id="botonesPlanAdelgazar">
+                <nav class="nav-planes">
+                    <a id="botonPlanesEjercicioAdelgazar" href="#">Planes de Ejercicios</a>
+                    <a id="botonPlanesAlimenticioAdelgazar" href="#">Planes Alimenticios</a>
+                    <a id="botonPlanRecomendacionAdelgazar" href="#">Recomendaciones</a>
+                   
+                    <div class="animation start-home"></div>
+                </nav>
+
+            </div>
+            <div class="contenedor-planes-nav" id="botonesPlanTonificar">
+                <nav class="nav-planes">
+                    <a id="botonPlanesEjercicioTonificar" href="#">Planes de Ejercicios</a>
+                    <a id="botonPlanesAlimenticioTonificar" href="#">Planes Alimenticios</a>
+                    <a id="botonPlanRecomendacionTonificar" href="#">Recomendaciones</a>
+                   
+                    <div class="animation start-home"></div>
+                </nav>
+
+            </div>
+            <div class="contenedor-planes-nav" id="botonesPlanPeso" >
+                <nav class="nav-planes">
+                    <a id="botonPlanesEjercicioPeso" href="#">Planes de Ejercicios</a>
+                    <a id="botonPlanesAlimenticioPeso" href="#">Planes Alimenticios</a>
+                    <a id="botonPlanRecomendacionPeso" href="#">Recomendaciones</a>
+                   
+                    <div class="animation start-home"></div>
+                </nav>
+
+            </div>
+           <!-- Menu alimentacion de adelgazar -->
+            <div class="contenedor-plan-Alimenticion">
+                <div class="menuAlimentacion" id="menuAlimentacionAdelgazar">
+                    <p class="semanas" id="mesUnoA">Primer Mes</p>
+                    <p class="semanas" id="mesDosA">Segundo mes</p>
+                    <p class="semanas" id="mesTresA">Tercer mes</p>
+
+                </div>
+                <!-- Menu alimentacion de tonificar -->
+                <div class="menuAlimentacion" id="menuAlimentacionTonificar">
+                    <p class="semanas" id="mesUnoT">Primer Mes</p>
+                    <p class="semanas" id="mesDosT">Segundo mes</p>
+                    <p class="semanas" id="mesTresT">Tercer mes</p>
+
+                </div>
+                <!-- Menu alimentacion de peso -->
+                <div class="menuAlimentacion" id="menuAlimentacionPeso">
+                    <p class="semanas" id="mesUnoP">Primer Mes</p>
+                    <p class="semanas" id="mesDosP">Segundo mes</p>
+                    <p class="semanas" id="mesTresP">Tercer mes</p>
+
+                </div>
+                <div class="menuRecomendaciones" id="menuRecomendacionesAdelgazar">
+                    <p class="semanas" id="mesUnoRa">Primer Mes</p>
+                    <p class="semanas" id="mesDosRa">Segundo mes</p>
+                    <p class="semanas" id="mesTresRa">Tercer mes</p>
+
+                </div>
+                <div class="menuRecomendaciones" id="menuRecomendacionesTonificar">
+                  <p class="semanas" id="mesUnoRt">Primer Mes</p>
+                  <p class="semanas" id="mesDosRt">Segundo mes</p>
+                  <p class="semanas" id="mesTresRt">Tercer mes</p>
+
+              </div>
+              <div class="menuRecomendaciones" id="menuRecomendacionesPeso">
+                <p class="semanas" id="mesUnoRp">Primer Mes</p>
+                <p class="semanas" id="mesDosRp">Segundo mes</p>
+                <p class="semanas" id="mesTresRp">Tercer mes</p>
+
+            </div>
+                <div class="menu" id="menuEjercicio">
+                    <p class="semanas" id="semana1">semana 1</p>
+                    <p class="semanas" id="semana2">semana 2</p>
+                    <p class="semanas" id="semana3">semana 3</p>
+                    <p class="semanas" id="semana4">semana 4</p>
+                    <p class="semanas" id="semana5">semana 5</p>
+                    <p class="semanas" id="semana6">semana 6</p>
+                    <p class="semanas" id="semana7">semana 7</p>
+                    <p class="semanas" id="semana8">semana 8</p>
+                    <p class="semanas" id="semana9">semana 9</p>
+                    <p class="semanas" id="semana10">semana 10</p>
+                    <p class="semanas" id="semana11">semana 11</p>
+                    <p class="semanas" id="semana12">semana 12</p>
+                </div>
+
+                <div class="contenidoRecomendaciones" id="contenidoRecomendacionAdelgazar">
+
+                    <article class="cardRecomendaciones" id="primerMesRecomendacionesAdelgazar">
+                        <div class="card-intRecomendaciones">
+                            <span class="card__spanRecomendaciones">Recomendacion Primer mes</span>
+                            
+                            <div class="card-dataRecomendaciones">
+                              <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                                <li><p class="tituloRecomendacion">Seguir el plan alimenticio: 🥗</p> Asegúrate de seguir el plan alimenticio proporcionado por la página web. Controla las porciones y mantén un equilibrio adecuado de proteínas, carbohidratos y grasas.</li>
+                                <li><P class="tituloRecomendacion">Registrar la ingesta: 📝</P> Utiliza una aplicación o un diario para registrar diariamente lo que comes. Esto puede ayudarte a tomar conciencia de tus elecciones alimenticias y a identificar áreas de mejora.</li>
+                                <li><P class="tituloRecomendacion">Aumentar la actividad física: 🏋️‍♂️</P> Si el plan de entrenamiento actual permite ajustes, considera aumentar gradualmente la intensidad o la duración de tus sesiones de ejercicio. También, intenta incorporar actividad física en tu rutina diaria, como caminar más o subir escaleras.</li>
+                                <li><P class="tituloRecomendacion">Hidratación: 🚰 </P>Asegúrate de beber suficiente agua durante el día. La hidratación adecuada es esencial para el funcionamiento óptimo del cuerpo y puede ayudar a controlar el apetito.</li>
+                              </ul></p>
+                              <button id="fraseUno" class="buttonRecomendaciones">Gracias</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cardRecomendaciones" id="segundoMesRecomendacionesAdelgazar">
+                        <div class="card-intRecomendaciones">
+                            <span class="card__spanRecomendaciones">Recomendacion Segundo mes </span>
+                            
+                            <div class="card-dataRecomendaciones">
+                              <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                                <li><p class="tituloRecomendacion">Evaluar el progreso: 📊 </p>  Revisa tus registros de comida y ejercicio para evaluar tu progreso. Observa cualquier patrón que pueda estar afectando tus objetivos de pérdida de peso.</li>
+                                <li><P class="tituloRecomendacion">Introducir variedad en la dieta: 🍏</P>Aunque estés siguiendo un plan alimenticio específico, trata de introducir variedad en tus comidas. Esto no solo puede hacer que la dieta sea más atractiva, sino que también asegura que estás obteniendo una gama completa de nutrientes.</li>
+                                <li><P class="tituloRecomendacion">Aumentar la actividad física: 🏋️‍♂️</P> Considera incorporar ejercicios de entrenamiento de fuerza en tu rutina. El músculo quema más calorías en reposo que la grasa, lo que puede ayudar en la pérdida de peso a largo plazo.</li>
+                                <li><P class="tituloRecomendacion">Gestión del estrés: 🧘‍♂️  </P>Practica técnicas de manejo del estrés, como la meditación o el yoga. El estrés puede afectar negativamente los hábitos alimenticios y el peso.</li>
+                              </ul></p>
+                              <button id="fraseDos" class="buttonRecomendaciones">Gracias</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cardRecomendaciones" id="tercerMesRecomendacionesAdelgazar">
+                        <div class="card-intRecomendaciones">
+                            <span class="card__spanRecomendaciones">Recomendacion Tercer mes </span>
+                            
+                            <div class="card-dataRecomendaciones">
+                              <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                                <li><p class="tituloRecomendacion">Ajuste del plan: 🔄 </p>  Revisa tu plan alimenticio y de entrenamiento. Si es necesario, haz ajustes para mantener la progresión y evitar la meseta en la pérdida de peso.</li>
+                                <li><P class="tituloRecomendacion">Incrementar la intensidad: 🔥</P> Si tu condición física lo permite, considera aumentar la intensidad de tus entrenamientos. Esto puede incluir intervalos de alta intensidad o sesiones más largas.</li>
+                                <li><P class="tituloRecomendacion">Revisión de metas a corto plazo: 🎯</P> Evalúa las metas que estableciste al principio y ajusta según sea necesario. Celebrar los logros alcanzados puede ser motivador y proporcionar un impulso adicional.</li>
+                                <li><P class="tituloRecomendacion">Consulta profesional: 🩺 </P> Si es posible, considera hablar con un nutricionista o entrenador personal para obtener orientación personalizada y ajustes específicos a tus necesidades.</li>
+                              </ul></p>
+                              <button id="fraseTres" class="buttonRecomendaciones">Gracias</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="contenidoRecomendaciones" id="contenidoRecomendacionTonificar">
+
+                  <article class="cardRecomendaciones" id="primerMesRecomendacionesTonificar">
+                      <div class="card-intRecomendaciones">
+                          <span class="card__spanRecomendaciones">Recomendacion Primer mes</span>
+                          
+                          <div class="card-dataRecomendaciones">
+                            <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                              <li><p class="tituloRecomendacion">Compromiso Inicial: 🎯</p> Ponte metas claras y realistas para el mes. Comprométete a seguir el plan de entrenamiento y alimentación.</li>
+                              <li><P class="tituloRecomendacion">Entrenamiento Focalizado: 🏋️‍♂️</P> Concéntrate en ejercicios clave para todos los grupos musculares. Asegúrate de ejecutar cada movimiento con precisión.</li>
+                              <li><P class="tituloRecomendacion">Alimentación Equilibrada: 🍲</P>Sigue de cerca tu plan alimenticio, dando prioridad a proteínas magras, vegetales y carbohidratos integrales.</li>
+                              <li><P class="tituloRecomendacion">Monitorización: 📊 </P>Lleva un registro de tus entrenamientos y comidas para evaluar tu progreso al final del mes.</li>
+                            </ul></p>
+                            <button id="fraseCuatro" class="buttonRecomendaciones">Gracias</button>
+                          </div>
+                      </div>
+                  </article>
+                  <article class="cardRecomendaciones" id="segundoMesRecomendacionesTonificar">
+                      <div class="card-intRecomendaciones">
+                          <span class="card__spanRecomendaciones">Recomendacion Segundo mes</span>
+                          
+                          <div class="card-dataRecomendaciones">
+                            <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                              <li><p class="tituloRecomendacion">Introduce Nuevos Ejercicios: 🆕 </p> grega variedad a tu rutina para desafiar diferentes músculos. Puedes probar entrenamientos de alta intensidad o nuevas disciplinas.</li>
+                              <li><P class="tituloRecomendacion">Cardio Intenso: 🏃‍♂️</P>Incorpora sesiones de cardio más intensas para mejorar la resistencia y la definición muscular.</li>
+                              <li><P class="tituloRecomendacion">Enfoque en la Recuperación: 😴</P> Presta atención a la recuperación. Duerme lo suficiente y considera técnicas como la crioterapia o masajes para reducir la fatiga muscular.</li>
+                              <li><P class="tituloRecomendacion">Reevaluación: 🔄  </P>Analiza tus registros y ajusta tu plan según tus necesidades y metas específicas.</li>
+                            </ul></p>
+                            <button id="fraseCinco" class="buttonRecomendaciones">Gracias</button>
+                          </div>
+                      </div>
+                  </article>
+                  <article class="cardRecomendaciones" id="tercerMesRecomendacionesTonificar">
+                      <div class="card-intRecomendaciones">
+                          <span class="card__spanRecomendaciones">Recomendacion Tercer mes</span>
+                          
+                          <div class="card-dataRecomendaciones">
+                            <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                              <li><p class="tituloRecomendacion">Últimos Desafíos: 🏆</p> Añade desafíos finales, como aumentar el peso en tus levantamientos o realizar circuitos más intensos.</li>
+                              <li><P class="tituloRecomendacion">Alimentación Sostenible: 🍏</P>Mantén una alimentación equilibrada y sostenible a largo plazo. Ajusta las porciones según tus necesidades energéticas.</li>
+                              <li><P class="tituloRecomendacion">Flexibilidad y Movilidad: 🤸‍♀️</P> Dedica tiempo a estiramientos y ejercicios de flexibilidad para mejorar la movilidad y reducir la rigidez muscular.</li>
+                              <li><P class="tituloRecomendacion">Celebración y Planificación Futura: 🎉 </P>Celebra tus logros y considera establecer nuevas metas para el siguiente trimestre. Puedes incluso buscar programas de entrenamiento más avanzados.</li>
+                            </ul></p>
+                            <button id="fraseSeis" class="buttonRecomendaciones">Gracias</button>
+                          </div>
+                      </div>
+                  </article>
+
+              </div>
+              <div class="contenidoRecomendaciones" id="contenidoRecomendacionPeso">
+
+                <article class="cardRecomendaciones" id="primerMesRecomendacionesPeso">
+                    <div class="card-intRecomendaciones">
+                        <span class="card__spanRecomendaciones">Recomendacion Primer mes</span>
+                        
+                        <div class="card-dataRecomendaciones">
+                          <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                            <li><p class="tituloRecomendacion">Seguir el Plan Alimenticio: 🍗 </p> Sigue de cerca tu plan alimenticio, asegurándote de obtener suficientes proteínas para favorecer el crecimiento muscular. Incluye fuentes de carbohidratos y grasas saludables.</li>
+                            <li><P class="tituloRecomendacion">Entrenamiento de Resistencia: 🏋️‍♂️</P> Presta atención al entrenamiento de resistencia con énfasis en levantamientos compuestos. Asegúrate de alcanzar la fatiga muscular en cada serie.</li>
+                            <li><P class="tituloRecomendacion">Registro de Progreso: 📊</P> Lleva un registro de tus levantamientos y medidas corporales. Esto te permitirá evaluar tu progreso y ajustar tu plan según sea necesario.</li>
+                            <li><P class="tituloRecomendacion">Hidratación: 🚰 </P>Asegúrate de beber suficiente agua durante el día. La hidratación adecuada es esencial para el funcionamiento óptimo del cuerpo y puede ayudar a controlar el apetito.</li>
+                          </ul></p>
+                          <button id="fraseSiete" class="buttonRecomendaciones">Gracias</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="cardRecomendaciones" id="segundoMesRecomendacionesPeso">
+                    <div class="card-intRecomendaciones">
+                        <span class="card__spanRecomendaciones">Recomendacion Segundo mes</span>
+                        
+                        <div class="card-dataRecomendaciones">
+                          <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                            <li><p class="tituloRecomendacion">Incremento de Peso y Repeticiones: 🏋️‍♀️ </p> Aumenta gradualmente el peso en tus levantamientos y considera realizar más repeticiones para desafiar tus músculos.</li>
+                            <li><P class="tituloRecomendacion">Variación en Rutinas: 🔄</P>Introduce variaciones en tus rutinas de entrenamiento. Cambia ejercicios, repeticiones y series para evitar adaptaciones excesivas.</li>
+                            <li><P class="tituloRecomendacion">Revisión del Plan Alimenticio: 🍚</P> valúa tu ingesta calórica y ajusta según tu respuesta al entrenamiento. Asegúrate de mantener un superávit calórico para respaldar el crecimiento muscular.</li>
+                            <li><P class="tituloRecomendacion">Gestión del estrés: 🧘‍♂️  </P>Practica técnicas de manejo del estrés, como la meditación o el yoga. El estrés puede afectar negativamente los hábitos alimenticios y el peso.</li>
+                          </ul></p>
+                          <button id="fraseOcho" class="buttonRecomendaciones">Gracias</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="cardRecomendaciones" id="tercerMesRecomendacionesPeso">
+                    <div class="card-intRecomendaciones">
+                        <span class="card__spanRecomendaciones">Recomendacion Tercer mes</span>
+                        
+                        <div class="card-dataRecomendaciones">
+                          <p class="titleRecomendaciones"><ul class="contenidoTexto">
+                            <li><p class="tituloRecomendacion">Intensificación del Entrenamiento: 🔥 </p> ntensifica aún más tu entrenamiento con técnicas como series descendentes, superseries o entrenamiento con intervalos cortos de descanso.</li>
+                            <li><P class="tituloRecomendacion">Enfoque en la Recuperación: 🛌</P>Presta atención a la recuperación. El descanso adecuado es crucial para el crecimiento muscular. Considera la inclusión de días de descanso activo.</li>
+                            <li><P class="tituloRecomendacion">Reajuste del Plan Alimenticio: 🥩</P> Reajusta tu plan alimenticio para mantener el superávit calórico. Asegúrate de obtener nutrientes esenciales, incluyendo proteínas de alta calidad.</li>
+                            <li><P class="tituloRecomendacion">Consulta profesional: 🩺 </P> Si es posible, considera hablar con un nutricionista o entrenador personal para obtener orientación personalizada y ajustes específicos a tus necesidades.</li>
+                          </ul></p>
+                          <button id="fraseNueve" class="buttonRecomendaciones">Gracias</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+                <!-- //Para persona que quiere adelgazar -->
+                <div class="contenidoAlimentacion" id="contenidoAlimentarioAdelgazar">
+                    <h1 class="titulosAlimentos1">Desayuno</h1>
+                    <div class="cardAlimentacion" id="primerMesDesayunoAdelgazar">
+                        <img src="./views/img/imgAlimentos/avena.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">ensalada de frutas🍓🍌</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Avena integral 🌾.</li>
+                                <li>Leche o yogur 🥛.</li>
+                                <li>Fresas y plátanos 🍓🍌.</li>
+                                <li>Semillas de chía 🌱.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesDesayunoAdelgazar">
+                        <img src="./views/img/imgAlimentos/batido.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Batido Verde Energizante 🥬🍍</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Espinacas 🍃.</li>
+                                <li>Piña 🍍.</li>
+                                <li>Plátano 🍌.</li>
+                                <li>Agua o leche de almendras 🥤.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesDesayunoAdelgazar">
+                        <img src="./views/img/imgAlimentos/tostada.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Tostadas de Aguacate 🥑🍞</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pan integral 🍞.</li>
+                                <li>Aguacate maduro 🥑.</li>
+                                <li>Tomate cherry 🍅.</li>
+                                <li>Huevo(opcional) 🍳.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <h1 class="titulosAlimentos2">Almuerzo</h1>
+                      <div class="cardAlimentacion" id="primerMesAlmuerzoAdelgazar">
+                        <img src="./views/img/imgAlimentos/quinoa.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Ensalada de Quinoa 🥗🍤</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Quinoa cocida 🍚.</li>
+                                <li>Camarones a la parrilla 🍤.</li>
+                                <li>Espárragos 🌱.</li>
+                                <li>Tomate, pepino y aguacate 🍅🥒🥑.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesAlmuerzoAdelgazar">
+                        <img src="./views/img/imgAlimentos/WrapPollo.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Wrap de Pollo y Vegetales 🌯🍗</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pechuga de pollo a la parrilla 🍗.</li>
+                                <li>Tortilla integral 🌾.</li>
+                                <li>Espinacas, tomate y zanahorias ralladas 🥕.</li>
+                                <li>Yogurt griego como aderezo 🍦.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesAlmuerzoAdelgazar">
+                        <img src="./views/img/imgAlimentos/sopaLentejas.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Sopa de Lentejas y Verduras 🍲:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Lentejas 🍲.</li>
+                                <li>Zanahorias y apio 🥕.</li>
+                                <li>Tomate 🍅.</li>
+                                <li>Caldo de verduras 🍵.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+
+                      <h1 class="titulosAlimentos3">Cena</h1>
+                      <div class="cardAlimentacion" id="primerMesCenaAdelgazar">
+                        <img src="./views/img/imgAlimentos/salmon.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Salmón al Horno con Espárragos 🍽️🐟</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Filete de salmón 🐟.</li>
+                                <li>Espárragos 🌱.</li>
+                                <li>Limón 🍋.</li>
+                                <li>Perejil 🌿.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesCenaAdelgazar">
+                        <img src="./views/img/imgAlimentos/pasta.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Pasta con Pesto de Aguacate 🥑🍝:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>asta de trigo integral 🍝.</li>
+                                <li>Aguacate 🥑.</li>
+                                <li>Albahaca fresca 🌿.</li>
+                                <li>Piñones y queso parmesano 🧀.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesCenaAdelgazar">
+                        <img src="./views/img/imgAlimentos/enchiladas.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Enchiladas de Pollo con Salsa Verde 🌯🍗</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pechuga de pollo cocida y desmenuzada 🍗.</li>
+                                <li>Tortillas de maíz 🌽.</li>
+                                <li>Salsa verde casera 🌶️.</li>
+                                <li>Queso rallado 🧀.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      
+                      
+                </div>
+                <!-- para persona que quiere tonificar -->
+                <div class="contenidoAlimentacion" id="contenidoAlimentarioTonificar">
+                    <h1 class="titulosAlimentos1">Desayuno</h1>
+                    <div class="cardAlimentacion" id="primerMesDesayunoTonificar">
+                        <img src="./views/img/imgAlimentos/OmeletChampinones.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Omelette  Champiñones con Queso Feta 🍳</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Claras de huevo 🥚.</li>
+                                <li>Yogur con bayas y nueces 🍓🥜.</li>
+                                <li>Té verde o café ☕.</li>
+                                <li>Champiñones 🍄.</li>
+                                <li>Queso feta 🧀.</li>
+                                
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesDesayunoTonificar">
+                        <img src="./views/img/imgAlimentos/batidoMantequilla.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Batido Proteico de Plátano y Mantequilla 🥤</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Plátano 🍌</li>
+                                <li>Espinacas 🍃</li>
+                                <li>Leche de almendras 🥛</li>
+                                <li>Mantequilla de almendra 🥜</li>
+                                <li>Semillas de chía 🌱</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesDesayunoTonificar">
+                        <img src="./views/img/imgAlimentos/avenaPlatano.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Avena con Plátano, Nueces y Semillas de Chía 🍌🥜</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Avena 🥣.</li>
+                                <li>Plátano 🍌.</li>
+                                <li>Batido verde 🌱 (espinacas 🍃, piña 🍍, jengibre 🧡, leche de coco 🥥, proteína en polvo)..</li>
+                                
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <h1 class="titulosAlimentos2">Almuerzo</h1>
+                      <div class="cardAlimentacion" id="primerMesAlmuerzoTonificar">
+                        <img src="./views/img/imgAlimentos/ensaladaPollo.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Ensalada de Pollo con Aguacate y Quinoa 🥗</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pechuga de pollo a la parrilla 🍗.</li>
+                                <li>Hojas verdes 🥬.</li>
+                                <li>Tomate 🍅.</li>
+                                <li>Aguacate 🥑.</li>
+                                <li>Quinoa 🍚..</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesAlmuerzoTonificar">
+                        <img src="./views/img/imgAlimentos/pavoEnsalada.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Pechuga de Pavo y Yogur Griego 🍗</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pechuga de pavo a la parrilla 🍗.</li>
+                                <li>Espárragos 🌱.</li>
+                                <li>Quinoa 🍚.</li>
+                                <li>Yogurt griego como aderezo 🍦.</li>
+                                <li>Ensalada de col rizada 🥬.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesAlmuerzoTonificar">
+                        <img src="./views/img/imgAlimentos/ensaladaGarbanzos.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Ensalada de Garbanzos con Pollo y Tahini🥗:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Garbanzos 🥫.</li>
+                                <li>Sopa de lentejas 🍲.</li>
+                                <li>Aderezo de tahini 🍯.</li>
+                                <li>Pechuga de pollo a la parrilla 🍗.</li>
+                                <li>Tomate 🍅.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+
+                      <h1 class="titulosAlimentos3">Cena</h1>
+                      <div class="cardAlimentacion" id="primerMesCenaTonificar">
+                        <img src="./views/img/imgAlimentos/salmonAlLimon.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Salmón al Limón y Batata Asada 🐟</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Filete de salmón 🐟.</li>
+                                <li>Limón 🍋.</li>
+                                <li>Hierbas 🌿.</li>
+                                <li>Batata asada 🍠.</li>
+                                <li>Brócoli al vapor 🥦.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesCenaTonificar">
+                        <img src="./views/img/imgAlimentos/ternera.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">tir-fry de Ternera con Arroz Integral 🥩:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Ternera 🥩.</li>
+                                <li>Brócoli 🥦.</li>
+                                <li>Zanahorias 🥕.</li>
+                                <li>Arroz integral 🍚.</li>
+                                <li>engibre 🧄.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesCenaTonificar">
+                        <img src="./views/img/imgAlimentos/pureColiflor.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Puré de Coliflor con Parmesano y pescado 🐟</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Filete de pescado blanco 🐟.</li>
+                                <li>Limón 🍋.</li>
+                                <li>Hierbas 🌿.</li>
+                                <li>Ajo 🧄.</li>
+                                <li>Coliflor 🍲.</li>
+                                <li>Queso parmesano 🧀.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      
+                      
+                </div>
+                <!-- //para persona que quiere ganar peso -->
+                 <div class="contenidoAlimentacion" id="contenidoAlimentarioPeso">
+                    <h1 class="titulosAlimentos1">Desayuno</h1>
+                    <div class="cardAlimentacion" id="primerMesDesayunoPeso">
+                        <img src="./views/img/imgAlimentos/tortillaAguacate.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Tortilla de Aguacate y Queso 🍳🥑</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Huevos 🥚.</li>
+                                <li>Aguacate 🥑.</li>
+                                <li>Queso 🧀.</li>
+                                <li>Pan integral 🍞.</li>
+                                <li>Batido de leche  con plátano y avena 🍌🥛🌾.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesDesayunoPeso">
+                        <img src="./views/img/imgAlimentos/batidoFrutas.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Batido de Proteínas  y Yogur 🍇🍓🥤</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Proteína en polvo 🥤.</li>
+                                <li>Frutas mixtas 🍇🍓.</li>
+                                <li>Yogur entero 🍦.</li>
+                                <li>Agua o leche de almendras 🥤.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesDesayunoPeso">
+                        <img src="./views/img/imgAlimentos/tostadasAguacate.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Tostadas de Aguacate y Huevo 🥑🍞</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pan integral 🍞.</li>
+                                <li>Aguacate maduro 🥑.</li>
+                                <li>Tomate cherry 🍅.</li>
+                                <li>Huevo frito 🍳.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <h1 class="titulosAlimentos2">Almuerzo</h1>
+                      <div class="cardAlimentacion" id="primerMesAlmuerzoPeso">
+                        <img src="./views/img/imgAlimentos/polloCury.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Pollo al Curry con Arroz y Verduras 🍗🍛🌽</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pechuga de pollo 🍗.</li>
+                                <li>Curry en polvo 🌶️.</li>
+                                <li>Arroz 🍚.</li>
+                                <li>Ensalada de aguacate y garbanzos 🥑🥗..</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesAlmuerzoPeso">
+                        <img src="./views/img/imgAlimentos/hamburguesa.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Hamburguesas Caseras con Papas Fritas 🍔🍟</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Carne molida 🍔.</li>
+                                <li>Pan para hamburguesa 🍞.</li>
+                                <li>Queso cheddar 🧀.</li>
+                                <li>Papas 🥔.</li>
+                                <li>Ensalada de aguacate, tomate y queso feta 🥑🍅🧀.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesAlmuerzoPeso">
+                        <img src="./views/img/imgAlimentos/burritoFrijoles.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Burritos de Carne con Arroz y Frijoles 🌯🍚🌶️:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Carne de res 🥩.</li>
+                                <li>Tortillas de harina 🌯.</li>
+                                <li>Arroz 🍚.</li>
+                                <li>Frijoles 🌶️🥫.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+
+                      <h1 class="titulosAlimentos3">Cena</h1>
+                      <div class="cardAlimentacion" id="primerMesCenaPeso">
+                        <img src="./views/img/imgAlimentos/pizza.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Pizza Casera con Pollo🍕🍗🧀🥦:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Masa para pizza 🍕.</li>
+                                <li>Salsa de tomate 🍅.</li>
+                                <li>Queso mozzarella 🧀.</li>
+                                <li>Pechuga de pollo 🍗.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="segundoMesCenaPeso">
+                        <img src="./views/img/imgAlimentos/pastaAlfredo.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Pasta Alfredo con Pollo y Brócoli 🍝🍗🥦:</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Pasta 🍝.</li>
+                                <li>Pechuga de pollo 🍗.</li>
+                                <li>Salsa Alfredo 🥛🧀.</li>
+                                <li>Brócoli 🥦.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cardAlimentacion" id="tercerMesCenaPeso">
+                        <img src="./views/img/imgAlimentos/salmonPatatas.jpg" alt="">
+            
+                        <div class="card__contentAlimentacion">
+                          <p class="card__titleAlimentacion">Salmón al Horno con Patatas 🐟🥔🥦</p>
+                          <p class="card__subtitleAlimentacion">Ingredientes:</p>
+                          <p class="card__descriptionAlimentacion">
+                            <ul> 
+                                <li>Filete de salmón 🐟.</li>
+                                <li>Patatas 🥔.</li>
+                                <li>Brócoli 🥦.</li>
+                                <li>Aceite de oliva 🫒.</li>
+                            </ul>
+
+                          </p>
+                        </div>
+                      </div>
+                      
+                      
+                </div>
+
+                <div class="contenido" id="contenidoEjercicios">
+                    <div class="contenedor-dias">
+                        <div class="dia">
+                            <div class="titulo-dia">
+                                <h3 id="titulo_uno">semana 1</h3><h3 id="titulo_dos">semana 2</h3><h3 id="titulo_tres">semana 3</h3><h3 id="titulo_cuatro">semana 4</h3><h3 id="titulo_cinco">semana 5</h3><h3 id="titulo_seis">semana 6</h3><h3 id="titulo_siete">semana 7</h3><h3 id="titulo_ocho">semana 8</h3><h3 id="titulo_nueve">semana 9</h3><h3 id="titulo_diez">semana 10</h3><h3 id="titulo_once">semana 11</h3><h3 id="titulo_doce">semana 12</h3>
+                                <h4>Lunes</h4>
+                            </div>
+                            
+                            <div class="ejercicio-diario">
+                                <div class="ejercicio">
+                                    <h3>ejercicio</h3>
+                                
+                                    <!-- Semana 1 -->
+                                    <p class="ejercicioSemana1" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarPlancha()">Plancha</p>
+                                    
+                                
+                                    <!-- Semana 2 -->
+                                    <p class="ejercicioSemana2" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarPlancha()">Plancha</p>
+                                    
+                                   
+                                
+                                    <!-- Semana 3 -->
+                                    <p class="ejercicioSemana3" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarPlancha()">Plancha</p>
+                                    
+                                
+                                    <!-- Semana 4 -->
+                                    <p class="ejercicioSemana4" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarPlancha()">Plancha</p>
+                                    
+                                
+                                    <!-- Semana 5 -->
+                                    <p class="ejercicioSemana5" onclick="mostrarLegPress()">Leg press</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarSidePlank()">Side Plank</p>
+                                   
+                                
+                                    <!-- Semana 6 -->
+                                    <p class="ejercicioSemana6" onclick="mostrarLegPress()">Leg press</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarSidePlank()">Side Plank</p>
+                                
+                                    <!-- Semana 7 -->
+                                    <p class="ejercicioSemana7" onclick="mostrarLegPress()">Leg press</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarSidePlank()">Side Plank</p>
+                                
+                                    <!-- Semana 8 -->
+                                    <p class="ejercicioSemana8" onclick="mostrarLegPress()">Leg press</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarSidePlank()">Side Plank</p>
+                                
+                                    <!-- Semana 9 -->
+                                    <p class="ejercicioSemana9" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana9" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarFlutterKicks()">Flutter Kicks</p>
+                                    
+                                
+                                    <!-- Semana 10 -->
+                                    <p class="ejercicioSemana10" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana10" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarFlutterKicks()">Flutter Kicks</p>
+                                
+                                    <!-- Semana 11 -->
+                                    <p class="ejercicioSemana11" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana11" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarFlutterKicks()" >Flutter Kicks</p>
+                                
+                                    <!-- Semana 12 -->
+                                    <p class="ejercicioSemana12" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana12" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarFlutterKicks()">Flutter Kicks</p>
+                                
+                                </div>
+                                
+                                <div class="ejercicio">
+                                    <h3>repeticiones</h3>
+                                    <p>12</p>
+                                    <p>10</p>
+                                    <p>10</p>
+                                    <p>14</p>
+                                    <p>10</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>series</h3>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>descanso</h3>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dia">
+                            <div class="titulo-dia">
+                                <h4>Martes</h4>
+                            </div>
+                            
+                            <div class="ejercicio-diario">
+                                <div class="ejercicio">
+                                    <h3>ejercicio</h3>
+                                   <!-- Semana 1 -->
+                                   <p class="ejercicioSemana1" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                               
+                                   <!-- Semana 2 -->
+                                   <p class="ejercicioSemana2" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                               
+                                   <!-- Semana 3 -->
+                                   <p class="ejercicioSemana3" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                               
+                                   <!-- Semana 4 -->
+                                   <p class="ejercicioSemana4" onclick="mostrarSquats()">Squats</p>
+                                   <p class="ejercicioSemana4" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                   <p class="ejercicioSemana4" onclick="mostrarPullDowns()">Pull-downs</p>
+                                   <p class="ejercicioSemana4" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                               
+                                   <!-- Semana 5 -->
+                                   <p class="ejercicioSemana5" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana5" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana5" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                   <p class="ejercicioSemana5" onclick="mostrarHamerCurl()">Hamer curl</p>
+                                   
+                               
+                                   <!-- Semana 6 -->
+                                   <p class="ejercicioSemana6" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana6" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana6" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                   <p class="ejercicioSemana6" onclick="mostrarHamerCurl()">Hamer curl</p>
+                               
+                                   <!-- Semana 7 -->
+                                   <p class="ejercicioSemana7" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana7" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana7" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                   <p class="ejercicioSemana7" onclick="mostrarHamerCurl()">Hamer curl</p>
+                               
+                                   <!-- Semana 8 -->
+                                   <p class="ejercicioSemana8" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana8" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana8" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                   <p class="ejercicioSemana8" onclick="mostrarHamerCurl()">Hamer curl</p>
+                               
+                                   <!-- Semana 9 -->
+                                   <p class="ejercicioSemana9" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana9" onclick="mostrarWeightedBack()">Weighted Back </p>
+                                   <p class="ejercicioSemana9" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                   <p class="ejercicioSemana9" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                   
+                               
+                                   <!-- Semana 10 -->
+                                   <p class="ejercicioSemana10" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana10" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana10" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                   <p class="ejercicioSemana10" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                  
+                               
+                                   <!-- Semana 11 -->
+                                   <p class="ejercicioSemana11" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana11" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana11" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                   <p class="ejercicioSemana11" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                   
+                               
+                                   <!-- Semana 12 -->
+                                   <p class="ejercicioSemana12" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana12" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana12" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                   <p class="ejercicioSemana12" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                  
+                
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>repeticiones</h3>
+                                    <p>12</p>
+                                    <p>10</p>
+                                    <p>10</p>
+                                    <p>14</p>
+                                    <p>10</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>series</h3>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>descanso</h3>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dia">
+                            <div class="titulo-dia">
+
+                                <h4>Miercoles</h4>
+                            </div>
+                            
+                            <div class="ejercicio-diario">
+                                <div class="ejercicio">
+                                    <h3>ejercicio</h3>
+                                    <!-- Semana 1 -->
+                                    <p class="ejercicioSemana1" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarSquats()">Squats</p>
+                                   
+                                
+                                    <!-- Semana 2 -->
+                                    <p class="ejercicioSemana2" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarSquats()">Squats</p>
+                                    
+                            
+                                    <!-- Semana 3 -->
+                                    <p class="ejercicioSemana3" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarSquats()">Squats</p>
+                                   
+                            
+                                    <!-- Semana 4 -->
+                                    <p class="ejercicioSemana4" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarChinUps()">Chin-ups</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarSquats()">Squats</p>
+                                   
+                                
+                                    <!-- Semana 5 -->
+                                    <p class="ejercicioSemana5" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarPlancha()">Plancha</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    
+                                
+                                    <!-- Semana 6 -->
+                                    <p class="ejercicioSemana6" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarPlancha()">Plancha</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                
+                                    <!-- Semana 7 -->
+                                    <p class="ejercicioSemana7" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarPlancha()">Plancha</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                
+                                    <!-- Semana 8 -->
+                                    <p class="ejercicioSemana8" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarPlancha()">Plancha</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                
+                                    <!-- Semana 9 -->
+                                    <p class="ejercicioSemana9" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarChinUps()">Chin-ups</p>
+                                    
+                                
+                                    <!-- Semana 10 -->
+                                    <p class="ejercicioSemana10" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarChinUps()">Chin-ups</p>
+                                
+                                    <!-- Semana 11 -->
+                                    <p class="ejercicioSemana11" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarChinUps()">Chin-ups</p>
+                                
+                                    <!-- Semana 12 -->
+                                    <p class="ejercicioSemana12" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarDumbbel()">Dumbbell flyes</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarChinUps()">Chin-ups</p>
+                
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>repeticiones</h3>
+                                    <p>12</p>
+                                    <p>10</p>
+                                    <p>10</p>
+                                    <p>14</p>
+                                    <p>10</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>series</h3>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>descanso</h3>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dia">
+                            <div class="titulo-dia">
+                            
+                                <h4>Jueves</h4>
+                            </div>
+                            
+                            <div class="ejercicio-diario">
+                                <div class="ejercicio">
+                                    <h3>ejercicio</h3>
+                                    <!-- Semana 1 -->
+                                    <p class="ejercicioSemana1" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarHamerCurl()">Hamer curl</p>
+                                    <p class="ejercicioSemana1" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana1" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                    
+                                
+                                    <!-- Semana 2 -->
+                                    <p class="ejercicioSemana2" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarHamerCurl()">Hamer curl</p>
+                                    <p class="ejercicioSemana2" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana2" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                
+                                    <!-- Semana 3 -->
+                                    <p class="ejercicioSemana3" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarHamerCurl()">Hamer curl</p>
+                                    <p class="ejercicioSemana3" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana3" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                
+                                    <!-- Semana 4 -->
+                                    <p class="ejercicioSemana4" onclick="mostrarSkullCrusher()">Skull Crusher</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarHamerCurl()">Hamer curl</p>
+                                    <p class="ejercicioSemana4" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana4" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                
+                                    <!-- Semana 5 -->
+                                    <p class="ejercicioSemana5" onclick="mostrarOverheadPress()">Overhead press</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarPullDowns()">Pull-downs</p>
+                                
+                                    <!-- Semana 6 -->
+                                    <p class="ejercicioSemana6" onclick="mostrarOverheadPress()">Overhead press</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarPullDowns()">Pull-downs</p>
+                                
+                                    <!-- Semana 7 -->
+                                    <p class="ejercicioSemana7" onclick="mostrarOverheadPress()">Overhead press</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarPullDowns()">Pull-downs</p>
+                                
+                                    <!-- Semana 8 -->
+                                    <p class="ejercicioSemana8" onclick="mostrarOverheadPress()">Overhead press</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarPullDowns()">Pull-downs</p>
+                                
+                                    <!-- Semana 9 -->
+                                    <p class="ejercicioSemana9" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarChinUps()">Chin-ups</p>
+                                
+                                    <!-- Semana 10 -->
+                                    <p class="ejercicioSemana10" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarChinUps()">Chin-ups</p>
+                                
+                                    <!-- Semana 11 -->
+                                    <p class="ejercicioSemana11" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarChinUps()">Chin-ups</p>
+                                
+                                    <!-- Semana 12 -->
+                                    <p class="ejercicioSemana12" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarChinUps()">Chin-ups</p>
+                
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>repeticiones</h3>
+                                    <p>12</p>
+                                    <p>10</p>
+                                    <p>10</p>
+                                    <p>14</p>
+                                    <p>10</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>series</h3>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>descanso</h3>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dia">
+                            <div class="titulo-dia">
+                                
+                                <h4>Viernes</h4>
+                            </div>
+                            
+                            <div class="ejercicio-diario">
+                                <div class="ejercicio">
+                                    <h3>ejercicio</h3>
+                                   <!-- Semana 1 -->
+                                    <p class="ejercicioSemana1" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                                    
+                               
+                                   <!-- Semana 2 -->
+                                   <p class="ejercicioSemana2" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                               
+                                   <!-- Semana 3 -->
+                                   <p class="ejercicioSemana3" onclick="mostrarPress()">Press de banca</p>
+                                   <p class="ejercicioSemana3" onclick="mostrarDominada()">Dominadas</p>
+                                   <p class="ejercicioSemana3" onclick="mostrarPullDowns()">Pull-downs</p>
+                                   <p class="ejercicioSemana3" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                               
+                                   <!-- Semana 4 -->
+                                   <p class="ejercicioSemana4" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarDominada()">Dominadas</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                            
+                                   <!-- Semana 5 -->
+                                   <p class="ejercicioSemana5" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana5" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana5" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarFlutterKicks()" >Flutter Kicks</p>
+                               
+                                   <!-- Semana 6 -->
+                                   <p class="ejercicioSemana6" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana6" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana6" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarFlutterKicks()" >Flutter Kicks</p>
+                               
+                                   <!-- Semana 7 -->
+                                   <p class="ejercicioSemana7" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana7" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana7" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarFlutterKicks()" >Flutter Kicks</p>
+                               
+                                   <!-- Semana 8 -->
+                                   <p class="ejercicioSemana8" onclick="LeverlPushdown()">Leverl Pushdown</p>
+                                   <p class="ejercicioSemana8" onclick="mostrarWeightedBack()">Weighted Back</p>
+                                   <p class="ejercicioSemana8" onclick="Mixedgrippullups()">Mixed grip pull-ups</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarFlutterKicks()" >Flutter Kicks</p>
+                               
+                                   <!-- Semana 9 -->
+                                   <p class="ejercicioSemana9" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana9" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana9" onclick="mostrarChinUps()">Chin-ups</p>
+                                   <p class="ejercicioSemana9" onclick="mostrarSquats()">Squats</p>
+                               
+                                   <!-- Semana 10 -->
+                                   <p class="ejercicioSemana10" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana10" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana10" onclick="mostrarChinUps()">Chin-ups</p>
+                                   <p class="ejercicioSemana10" onclick="mostrarSquats()">Squats</p>
+                               
+                                   <!-- Semana 11 -->
+                                   <p class="ejercicioSemana11" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana11" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana11" onclick="mostrarChinUps()">Chin-ups</p>
+                                   <p class="ejercicioSemana11" onclick="mostrarSquats()">Squats</p>
+                               
+                                   <!-- Semana 12 -->
+                                   <p class="ejercicioSemana12" onclick="mostrarOverheadPress()">Overhead press</p>
+                                   <p class="ejercicioSemana12" onclick="mostrarDumbbellPress()">Dumbbell press</p>
+                                   <p class="ejercicioSemana12" onclick="mostrarChinUps()">Chin-ups</p>
+                                   <p class="ejercicioSemana12" onclick="mostrarSquats()">Squats</p>
+                
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>repeticiones</h3>
+                                    <p>12</p>
+                                    <p>10</p>
+                                    <p>10</p>
+                                    <p>14</p>
+                                    <p>10</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>series</h3>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>descanso</h3>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dia">
+                            <div class="titulo-dia">
+                                
+                                <h4>Sabado</h4>
+                            </div>
+                            
+                            <div class="ejercicio-diario">
+                                <div class="ejercicio">
+                                    <h3>ejercicio</h3>
+                                    <!-- Semana 1 -->
+                                    <p class="ejercicioSemana1" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana1" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana1" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana1" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                   
+                                
+                                    <!-- Semana 2 -->
+                                    <p class="ejercicioSemana2" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana2" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana2" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana2" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                   
+                                
+                                    <!-- Semana 3 -->
+                                    <p class="ejercicioSemana3" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana3" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana3" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana3" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                   
+                                
+                                    <!-- Semana 4 -->
+                                    <p class="ejercicioSemana4" onclick="mostrarDeadlifts()">Deadlifts</p>
+                                    <p class="ejercicioSemana4" onclick="mostrarDeclinebenchpress()">Decline bench press</p>
+                                    <p class="ejercicioSemana4" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana4" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                    
+                                
+                                    <!-- Semana 5 -->
+                                    <p class="ejercicioSemana5" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana5" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                                
+                                    <!-- Semana 6 -->
+                                    <p class="ejercicioSemana6" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana6" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                                
+                                    <!-- Semana 7 -->
+                                    <p class="ejercicioSemana7" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana7" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                                
+                                    <!-- Semana 8 -->
+                                    <p class="ejercicioSemana8" onclick="mostrarSentadilla()">Sentadillas</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarPress()">Press de banca</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarPullDowns()">Pull-downs</p>
+                                    <p class="ejercicioSemana8" onclick="mostrarDumbbellSquat()">Dumbbell Squat</p>
+                                
+                                    <!-- Semana 9 -->
+                                    <p class="ejercicioSemana9" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana9" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana9" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                
+                                    <!-- Semana 10 -->
+                                    <p class="ejercicioSemana10" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana10" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana10" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                
+                                    <!-- Semana 11 -->
+                                    <p class="ejercicioSemana11" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana11" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana11" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                                
+                                    <!-- Semana 12 -->
+                                    <p class="ejercicioSemana12" onclick=" mostrarRearLungue()">Rear Lungue</p>
+                                    <p class="ejercicioSemana12" onclick=" mostrarHipTrust()">Hip Trust</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarSquats()">Squats</p>
+                                    <p class="ejercicioSemana12" onclick="mostrarEstocadaBosu()">Estocada en bosu</p>
+                
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>repeticiones</h3>
+                                    <p>12</p>
+                                    <p>10</p>
+                                    <p>10</p>
+                                    <p>14</p>
+                                    <p>10</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>series</h3>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    <p>3</p>
+                                    
+                                </div>
+                                <div class="ejercicio">
+                                    <h3>descanso</h3>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                    <p>3-5 min</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+    
+        </div>
+
+        <div class="contenedor-cargador" id="cargador">
+            <img class="loader" src="views/img/logo.png" alt="">
+            <h2>Cargando planes...</h2>
+        </div>
+
+        <section class="contenedor-planes" id="contenedor-planes">
+            <div class="container" id="basico">
+                <div class="card_box" onclick="mostrarVentanaGifGratis()" id="planGratuitoClick">
+                    <span class="gratis"></span>
+                    <div class="contenedor-premium">
+                        <h1>0$</h1>
+                        <img src="views/img/mono-gratis.png" alt="">
+                    </div>
+                    <div class="contenedor-texto-premium">
+                        <h2>Plan Gratuito (15 días):</h2>
+                        <p><img class="cheque" src="views/img/cheque.png" alt="">Ejercicios básicos.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Recetas saludables.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Seguimiento de progreso.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Recomendaciones del plan.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="container" id="semiPremium">
+                <div class="card_box" onclick="mostrarVentanaGifGratis()">
+                    <span class="master"></span>
+                    <div class="contenedor-premium">
+                        <h1>50$</h1>
+                        <img src="views/img/mono-master.png" alt="">
+                    </div>
+                    <div class="contenedor-texto-premium">
+                        <h2>Plan Master (30 días):</h2>
+                        <p><img class="cheque" src="views/img/cheque.png" alt="">Ejercicios avanzados.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Personalización.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Seguimiento avanzado.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Soporte de expertos.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Recetas exclusivas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card_box" id="premium" onclick="mostrarVentanaGifGratis()">
+                    <span class="premium"></span>
+                    <div class="contenedor-premium">
+                        <h1>100$</h1>
+                        <img src="views/img/logo.png" alt="">
+                    </div>
+                    <div class="contenedor-texto-premium">
+                        <h2>Plan Premium (90 días):</h2>
+                        <p><img class="cheque" src="views/img/cheque.png" alt="">Todo lo del Plan Master.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Sesiones en vivo.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt="">Evaluaciones de salud.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Asesoramiento personal.</p>
+                        <p><img class="cheque" src="views/img/cheque.png" alt=""> Planificación personalizada.</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="ventana-modal"  id="ventana-modal">
+            <div class="contenido-modal">
+                <div class="img-titulo">
+                    <img src="views/img/logo.png" alt="" class="contenedor-logo">
+                    <h2>Ingresa tus datos para generarte una rutina</h2>
+                </div>
+              <div class="container-form-ecxel">
+                <div class="archivo-ecxel">
+                    <input type="file" class="" id="ecxel-input">
+                </div>
+                <table class="tabla-form">
+                    <thead class="thead-form">
+                        <tr class="tr-col">
+                            <th scope="col" class="th-titulo">Peso:</th>
+                            <th scope="col" class="th-titulo">Estatura:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tr-peso" id="pesoDato"></td>
+                            <td class="estatura-input" id="estaturaDato">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="inputEstatura" placeholder="Ingrese estatura">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="btn-g-p">
+                <button class="btn-diseño" onclick="guardarDatos()">Guardar</button>
+                </div> -->
+                <div class="select-form"> 
+                    <select id="inputGenero">
+                        <option value="">Genero</option>
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                        <option>cualquiera de los 39 tipos de gay</option>
+                    </select>
+                    <button type="submit" class="btn-diseño" id="botonVetanaModal" onclick="calcularIMCUsuario()">Enviar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="userContainer">
+            <h2 id="userName">Nombre de Usuario</h2>
+            <p>Peso: <span id="userWeight"></span> kg</p>
+            <p>Estatura: <span id="userHeight"></span> m</p>
+            <div>
+              <button id="updateDataButton" onclick="actualizarDatos()" >Actualizar Datos</button>
+              <button id="updateDataButton" onclick="userContainerNone()">Salir</button>
+            </div>
+          </div>
+          
+      
+        <div class="boton-salir-planes" id="boton-salir">
+            <button class="pushable" id="boton-salir-naranja">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">
+                    Volver
+                </span>
+            </button>
+        </div>
+
+        <section id="portada" class="contenedor-portada">
+            <div data-aos="zoom-in-up" class="contenedor-titulos">
+                <h1>DOMINA TU MENTE,</h1>
+                <h1>CAMBIA TU CUERPO</h1>
+                <p>Con Glow-fit transforma tu cuerpo por medio de un plan estricto y una alimentacion balanceada</p>
+            </div>
+            <div class="botones-planes">
+                <button class="planes-boton1">CONTACTANOS</button>
+                <button class="planes-boton" id="cotiza-plan" disabled="true">COTIZAR PLANES</button>
+            </div>
+        </section>
+
+        <section id="imagen-principal" class="contenedor-imagen-portada">
+            <img class="imagen-portada" src="views/img/logo-animacion.jpg" mujer en gimnasio">
+        </section>
+
+        <section id="razones" data-aos="zoom-in-up" class="contenedor-razones">
+            <article class="titulos">
+                <h1>RAZONES POR LAS QUE MARCAMOS LA DIFERENCIA</h1>
+            </article>
+
+            
+        </section>
+
+        <section id="articulos" data-aos="zoom-in-up" class="contenedor-cards">
+            <article>
+                <img src="views/img/razon-ejercicio.gif" alt="icono">
+                <h2>una razon</h2>
+                <p> <strong>Acceso a Entrenamientos Personalizados:</strong> ofrecer programas personalizados según tus
+                    metas, nivel de condición física y preferencias. </p>
+            </article>
+            <article>
+                <img src="views/img/razon-dos.gif" alt="icono">
+                <h2>una razon</h2>
+                <p><strong>Flexibilidad en el Horario:</strong> puedes hacer ejercicio en cualquier momento y en
+                    cualquier lugar.</p>
+            </article>
+            <article>
+                <img src="views/img/razon-tres.gif" alt="icono">
+                <h2>una razon</h2>
+                <p><strong>Seguimiento y Registro de Progresos:</strong> Puedes hacer un seguimiento de tu progreso.
+                </p>
+            </article>
+            <article>
+                <img src="views/img/razon-cuatro.gif" alt="icono">
+                <h2>una razon</h2>
+                <p><strong>Variedad de Entrenamientos:</strong> ofrecen una amplia variedad de entrenamientos, desde
+                    yoga hasta entrenamientos de alta intensidad.</p>
+            </article>
+            <article>
+                <img src="views/img/razon-cinco.gif" alt="icono">
+                <h2>una razon</h2>
+                <p><strong>Motivación y Desafíos:</strong> Competir contra ti mismo o contra otros usuarios puede hacer
+                    que el proceso de ejercicio sea más divertido y estimulante. </p>
+            </article>
+            <article>
+                <img src="views/img/razon-seis.gif" alt="icono">
+                <h2>una razon</h2>
+                <p><strong>Guía Visual y Instrucciones Detalladas:</strong> Esto asegura que estás realizando los
+                    movimientos correctamente, reduciendo el riesgo de lesiones y mejorando la eficacia de tu
+                    entrenamiento.</p>
+            </article>
+
+        </section>
+        <div class="testimonios" id="testimonios">
+            <div class="contenedor-creadores">
+                <h1>Unete a nuestra comunidad</h1> 
+                <img class="img-creadores" src="./views/img/logo.png" alt="">   
+            </div>
+            <div class="testimonios-text">
+                <h1>Testimonios</h1>
+            </div>
+            <section class="carrusel-imagenes">
+            
+               
+                <section class="swiper SwiperTestimonios">
+
+                    <div class="swiper-wrapper swiper-wrapperTestimonios">
+                
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user1.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Empresaria y Madre</span>
+                          <span class="card__name">Isabella Morales </span>
+                          <p class="card__text">"Como empresaria y madre, Glow Fit ha sido mi aliado para mantenerme en forma. Las rutinas y la dieta han transformado mi vida diaria."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user2.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Estudiante Universitaria</span>
+                          <span class="card__name">Aria Thompson</span>
+                          <p class="card__text">"Glow Fit me ha ayudado a encontrar mi equilibrio como estudiante universitaria. Sus rutinas fáciles de seguir y planes de comida me mantienen en forma, incluso en medio de mis estudios."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user3.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Entrenador Personal</span>
+                          <span class="card__name">Gabriel Cruz</span>
+                          <p class="card__text">"Glow Fit ha sido mi socio en el fitness durante años. Las rutinas desafiantes y los planes de alimentación han elevado mi rendimiento y bienestar."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user4.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Viajera Constante</span>
+                          <span class="card__name">Olivia Bennett </span>
+                          <p class="card__text">"Soy una viajera constante, y Glow Fit es mi gimnasio de bolsillo. Me ayuda a mantenerme activa y saludable en cualquier parte del mundo."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user5.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">  Entrenadora Personal</span>
+                          <span class="card__name">Elena Rodriguez </span>
+                          <p class="card__text">"Como entrenadora personal, Glow Fit ha revolucionado mi enfoque. Sus recursos son fundamentales para motivar a mis clientes y mantenerlos en forma."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user6.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title"> Entusiasta del Fitness</span>
+                          <span class="card__name">Ethan Mitchell</span>
+                          <p class="card__text">"Como estudiante y entusiasta del fitness, Glow Fit ha simplificado mi vida. Sus rutinas y sugerencias de dieta son fáciles de seguir."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user7.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Viajero de Negocios</span>
+                          <span class="card__name">Liam Turner </span>
+                          <p class="card__text">"Glow Fit me ha ayudado a mantenerme en forma durante mis viajes de negocios. Sus rutinas versátiles y planes de alimentación adaptativos son perfectos para mi estilo de vida."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user8.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Bloguera de Salud</span>
+                          <span class="card__name">Sophia Lee</span>
+                          <p class="card__text">"Glow Fit ha sido mi guía en mi viaje de pérdida de peso. Las rutinas efectivas y planes de alimentación saludable son la clave de mi éxito."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user9.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Bloggera de Salud</span>
+                          <span class="card__name">Amelia Harper</span>
+                          <p class="card__text">"Soy una bloguera de salud, y Glow Fit es mi secreto mejor guardado. Sus rutinas."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardTestimonios swiper-slide swiper-slideTestimonios">
+                        <div class="card__image">
+                            <img src="views/img/user10.jpg" alt="">
+                        </div>
+                        <div class="card__content">
+                          <span class="card__title">Nutricionista</span>
+                          <span class="card__name">Sebastian Hayes</span>
+                          <p class="card__text">"Como nutricionista, Glow Fit es una fuente inagotable de inspiración para mis clientes."</p>
+                          <h2>rating</h2>
+                          <div class="contenedor-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fa8b03}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+
+                          </div>
+                         
+                        </div>
+                      </div>
+                
+                
+                    </div>
+                  </section>
+                
+            </section>
+
+        </div>
+
+        <section id="imagen-parrafos" class="contenedor-imagen-parrafos">
+            <img class="imagen-levitar" src="views/img/imagen-gym.png" alt="mujer-corriendo">
+            <article data-aos="zoom-in-up">
+                <h1>LO QUE OBTENDRAS</h1>
+                <h1>UNA VIDA MAS SANA</h1>
+                <p>Donde va la mente, el cuerpo la sigue. La mentalidad es importante cuando se trata de desarrollar
+                    hábitos saludables, como entrenar de manera constante y llevar una dieta equilibrada y solidaria</p>
+                
+                
+            </article>
+        </section>
+        <div id="nosotros" class="contenedor-carta ">
+            <div class="contenedor-creadores">
+                <h1>Creadores</h1>
+                <img class="img-creadores" src="views/img/logo.png" alt="">
+
+            </div >
+            <div class="swiper mySwiper contenedor-cartas ">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="cover">
+                            <img class="imagen-pablo" src="./views/img/pablo.png" alt="">
+                            <div class="img__back"></div>
+                        </div>
+                        <div class="description">
+                            <h2>Pablo</h2>
+                            <p>Creador de Glow fit y nutricionista deportivo</p>
+                            <div class="redes-sociales">
+                                <a href=""target="_blank"><img class="instagram" src="views/img/instagram.png" alt=""></a>
+                                <a href=""target="_blank"><img class="github" src="views/img/github.png" alt=""></a>
+                                <a href=""target="_blank"><img class="whatsapp" src="views/img/whatsapp.png" alt=""></a>
+        
+                            </div>
+        
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="cover">
+                            <img class="imagen-Camilo" src="./views/img/camilo.png" alt="">
+                            <div class="img__back"></div>
+                        </div>
+                        <div class="description">
+                            <h2>Camilo</h2>
+                            <p>Creador de Glow fit y personal trainer</p>
+                            <div class="redes-sociales">
+                                <a href=""target="_blank"><img class="instagram" src="views/img/instagram.png" alt=""></a>
+                                <a href=""target="_blank"><img class="github" src="views/img/github.png" alt=""></a>
+                                <a href=""target="_blank"><img class="whatsapp" src="views/img/whatsapp.png" alt=""></a>
+        
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="cover">
+                            <img class="imagen-sebas" src="./views/img/sebas-logo.png" alt="">
+                            <div class="img__back"></div>
+                        </div>
+                        <div class="description">
+                            <h2>Sebas</h2>
+                            <p>Creador de Glow fit y Terapeuta deportivo y guapo</p>
+                            <div class="redes-sociales">
+                                <a href="https://www.instagram.com/s.betancur0211/" target="_blank"><img class="instagram" src="views/img/instagram.png" alt=""></a>
+                                <a href="https://github.com/sebastianb0211" target="_blank"><img class="github" src="views/img/github.png" alt=""></a>
+                                <a href="https://wa.link/5b01j5" target="_blank"><img class="whatsapp" src="views/img/whatsapp.png" alt=""></a>
+        
+                            </div>
+        
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="cover">
+                            <img class="imagen-andres" src="./views/img/andres.png" alt="">
+                            <div class="img__back"></div>
+                        </div>
+                        <div class="description">
+                            <h2>Andres</h2>
+                            <p>Creador de Glow fit , Preparador Físico y pensionado</p>
+                            <div class="redes-sociales">
+                                <a href="https://www.instagram.com/s.betancur0211/" target="_blank"><img class="instagram" src="views/img/instagram.png" alt=""></a>
+                                <a href="https://github.com/sebastianb0211" target="_blank"><img class="github" src="views/img/github.png" alt=""></a>
+                                <a href="https://wa.link/5b01j5" target="_blank"><img class="whatsapp" src="views/img/whatsapp.png" alt=""></a>
+        
+                            </div>
+        
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> <div class="card">
+                    <div class="cover">
+                        <img class="imagen-boris" src="./views/img/boris.png" alt="">
+                        <div class="img__back"></div>
+                    </div>
+                    <div class="description">
+                        <h2>Boris</h2>
+                        <p>Creador de glow-fit y coaching profesional</p>
+                        <div class="redes-sociales">
+                            <a href="https://www.instagram.com/s.betancur0211/" target="_blank"><img class="instagram" src="views/img/instagram.png" alt=""></a>
+                            <a href="https://github.com/sebastianb0211" target="_blank"><img class="github" src="views/img/github.png" alt=""></a>
+                            <a href="https://wa.link/5b01j5" target="_blank"><img class="whatsapp" src="views/img/whatsapp.png" alt=""></a>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+
+
+            
+
+        <footer id="footer" class="footer">
+            <ul class="lista">
+                <h2>Productos</h2>
+                <li><a class="enlaces-footer" href="">Entrenamiento</a></li>
+                <li><a class="enlaces-footer" href="">Nutrición</a></li>
+            </ul>
+            <ul class="lista">
+                <h2>Privacidad</h2>
+                <li><a class="enlaces-footer" href="">Condiciones</a></li>
+                <li><a class="enlaces-footer" href="">Cookies....</a></li>
+            </ul>
+
+            <ul class="lista">
+                <h2>Social</h2>
+                <li><a class="enlaces-footer" href="">Instagram</a></li>
+                <li><a class="enlaces-footer" href="">Facebook</a></li>
+            </ul>
+        </footer>
+
+    </main>
+
+
+
+
+    <script src="controller/login.js"></script>
+    <script src="controller/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <script src="controller/ecxel.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="controller/alert.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./controller/swiper.js"></script>
+    <script src="./controller/planes.js"></script>
+    <script src="./controller/ejercicios.js"></script>
+    <script src="./controller/alimentacion.js"></script>
+    <script src="./controller/gifs.js"></script>
+    <script src="controller/modalDatos.js"></script>
+    
+   
+</body>
+
+</html>

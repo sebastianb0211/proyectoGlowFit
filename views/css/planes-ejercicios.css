@@ -1,0 +1,476 @@
+.contenedor-planes-ejercicio {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.contenedor-planes-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.nav-planes {
+  position: relative;
+  margin-top: 50px;
+  width: 590px;
+  height: 50px;
+  background: #393e46;
+  border-radius: 8px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.nav-planes a {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+.nav-planes .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  background: #f96d00;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+.nav-planes a:nth-child(1) {
+  width: 200px;
+}
+.nav-planes .start-home,
+a:nth-child(1):focus ~ .animation {
+  width: 200px;
+  left: 0;
+  background: #f96d00;
+}
+
+.nav-planes a:nth-child(2) {
+  width: 210px;
+}
+
+.nav-planes a:nth-child(2):focus ~ .animation {
+  width: 210px;
+  left: 200px;
+}
+.nav-planesa:nth-child(3) {
+  width: 200px;
+}
+
+.nav-planes a:nth-child(3):focus ~ .animation {
+  width: 200px;
+  left: 390px;
+}
+
+.contenedor-plan-Alimenticion {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+}
+
+.menu {
+  background-color: #F5F7F8;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.menuAlimentacion {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  gap: 30px;
+}
+.menuRecomendaciones{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  gap: 30px;
+}
+
+.semanas {
+  width: 100%;
+  border: 1px solid slateblue;
+  height: 7%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido {
+  width: 85%;
+  height: 100%;
+  display: flex;
+}
+.contenidoRecomendaciones{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  display: none;
+  justify-content: center;
+}
+.contenidoAlimentacion {
+  
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  display: none;
+}
+
+.dia {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  opacity: 0.9;
+  background-color: #c5c5c5;
+  width: 30%;
+  height: 45%;
+  border-radius: 7px;
+  
+}
+
+.contenedor-dias {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F5F7F8;
+}
+
+.ejercicio-diario {
+  
+  display: flex;
+  justify-content: space-around;
+  height: 75%;
+}
+
+.ejercicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ejercicio p {
+  border-bottom: 1px solid black;
+}
+
+.titulo-dia {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titulo-dia h3 {
+  font-size: 30px;
+}
+
+.titulo-dia h4 {
+  font-size: 25px;
+  color: #f96d00;
+}
+.menuAlimentacion p {
+  width: 9em;
+  height: 2.4em;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  cursor: pointer;
+}
+.menuAlimentacion p::before {
+  content: "";
+  width: 0;
+  height: 2.4em;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #f96d00 0%, #ff9d00 100%);
+  transition: 0.5s ease;
+  z-index: -1;
+}
+.menuAlimentacion p:hover::before {
+  width: 9em;
+}
+.menuRecomendaciones p {
+  width: 9em;
+  height: 2.4em;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  cursor: pointer;
+}
+.menuRecomendaciones p::before {
+  content: "";
+  width: 0;
+  height: 2.4em;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #f96d00 0%, #ff9d00 100%);
+  transition: 0.5s ease;
+  z-index: -1;
+}
+.menuRecomendaciones p:hover::before {
+  width: 9em;
+}
+.menu p {
+  width: 9em;
+  height: 2.4em;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  cursor: pointer;
+}
+.menu p::before {
+  content: "";
+  width: 0;
+  height: 2.4em;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #f96d00 0%, #ff9d00 100%);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+.menu p:hover::before {
+  width: 9em;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.cardAlimentacion {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardAlimentacion img {
+  width: 400px;
+  height: 250px;
+  object-fit: contain;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardAlimentacion:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__contentAlimentacion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f96d00;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardAlimentacion:hover .card__contentAlimentacion {
+  transform: rotateX(0deg);
+}
+
+.card__titleAlimentacion {
+  margin: 0;
+  font-size: 24px;
+  color: black;
+  font-weight: 700;
+  position: relative;
+  
+}
+.card__subtitleAlimentacion {
+  margin: 0;
+  font-size: 24px;
+  color: #000000;
+  font-weight: 700;
+}
+
+.cardAlimentacion:hover img {
+  scale: 0;
+}
+
+.card__descriptionAlimentacion {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.titulosAlimentos1 {
+  position: absolute;
+  z-index: 20;
+  top: 40%;
+  right: 68%;
+}
+.titulosAlimentos2 {
+  position: absolute;
+  z-index: 20;
+  top: 40%;
+  right: 40%;
+}
+.titulosAlimentos3 {
+  position: absolute;
+  z-index: 20;
+  top: 40%;
+  right: 16%;
+}
+
+#segundoMesDesayuno,
+#segundoMesAlmuerzo,
+#segundoMesCena,
+#tercerMesDesayuno,
+#tercerMesCena,#tercerMesAlmuerzo {
+  display: none;
+}
+
+
+/* recomendaciones */
+
+.cardRecomendaciones {
+  width: 85%;
+  height: 90%;
+  padding: 10px;
+  background-image: linear-gradient(to right bottom,#f96d00, #f98500, rgb(215, 84, 13), #e75100, #e79600);
+  background-size: 200% 200%;
+  border-radius: 12px;
+  
+  
+}
+#segundoMesRecomendaciones,#tercerMesRecomendaciones{
+  display: none;
+}
+
+.card-intRecomendaciones {
+  height: 100%;
+  overflow: hidden;
+  font-size: 50px;
+  border-radius: 6px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  
+}
+.tituloRecomendacion{
+  color: #f96d00;
+}
+
+
+.titleRecomendaciones {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-dataRecomendaciones {
+  padding: 20px;
+  font-size: x-large;
+ 
+  
+  
+}
+
+.card__spanRecomendaciones {
+  font-family: 'Lucida Sans' sans-serif;
+  font-size: 20px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  
+}
+.logo{
+  cursor: pointer;
+
+}
+.contenidoTexto{
+  font-size: 16px;
+}
+
+.buttonRecomendaciones {
+  width: 50%;
+  background-image: linear-gradient(to right bottom, #f96d00, #f96d00, #f96d00, #f96d00, #f96d00);
+  background-size: 200% 200%;
+  border: none;
+  padding: 8px 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: transform 0.1s ease-in;
+  margin-top: 40px;
+  margin-left: 80px;
+}
+
+.buttonRecomendaciones:active {
+  transform: translateY(3px);
+}
+
+.card:hover, .buttonRecomendaciones:hover {
+  animation: gradient 0.8s ease-in 1;
+  cursor: pointer;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 200% 200%;
+  }
+
+  100% {
+    background-position: 400% 400%;
+  }
+}
